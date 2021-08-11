@@ -19,3 +19,6 @@ task for www.ngpinform.ru
     
     3.1 Для умножения элементов списка так же можно использовать numpy.prod(list)
 4. Сравниваем числа, выводим наибольшее из них 
+
+Запуск:
+В cmd или терминале python3 sort.py и python3 non-sort.py
