@@ -1,15 +1,26 @@
 # случай с неупорядоченным списком
 from random import randint
-list_of_numbers = [randint(-100, 101) for i in range(1000)] #генерируем неупорядоченный список из 1000 чисел от -100 до 100
+list_of_numbers = [randint(-101, 101) for i in range(20)] #генерируем неупорядоченный список из 20 чисел от -100 до 100
 
-# def most_number(ls):
-#     last_three_numbers = ls[-1] * ls[-2] * ls[-3] #произведение последних трёх элементов списка
-#     first_two_numbers_and_last_number = list_of_numbers[0] * list_of_numbers[1] * list_of_numbers[-1] #произведение первых двух элементов списка и последнего элемента списка
-#     if last_three_numbers > first_two_numbers_and_last_number:
-#         return last_three_numbers #970200
-#     elif last_three_numbers < first_two_numbers_and_last_number:
-#         return first_two_numbers_and_last_number #990000
+def bubble_sort(ls):
+    last_item = len(ls) - 1
+    for i in range(0, last_item):
+        for z in range(0, last_item - i):
+            if ls[z] > ls[z+1]:
+                ls[z], ls[z+1] = ls[z+1], ls[z]
+    return ls
 
-# print(most_number(list_of_numbers))
 
-print(list_of_numbers)
+def most_number(ls):
+    last_three_numbers = ls[-1] * ls[-2] * ls[-3] #произведение последних трёх элементов списка
+    first_two_numbers_and_last_number = ls[0] * ls[1] * ls[-1] #произведение первых двух элементов списка и последнего элемента списка
+    if last_three_numbers > first_two_numbers_and_last_number:
+        return last_three_numbers 
+    elif last_three_numbers < first_two_numbers_and_last_number:
+        return first_two_numbers_and_last_number 
+
+
+if __name__ == "__main__":
+    print("Неупорядоченный список: ", list_of_numbers)
+    print("Упорядоченный список: ", bubble_sort(list_of_numbers))
+    print("Наибольшее произведение: ", most_number(bubble_sort(list_of_numbers)))
