@@ -1,4 +1,4 @@
-# ngpinform-ru
+# ngpinform.ru
 Test task for www.ngpinform.ru
 
 # Задача
